@@ -1,5 +1,9 @@
 import './App.css';
 import MetaTags from 'react-meta-tags';
+import Header from  './Header';
+import Nav from './Nav';
+import Main from './Main'
+import Footer from './Footer';
 
 function App() {
   return (
@@ -18,10 +22,10 @@ function App() {
         <meta name="copyright" content="Copyright 2022"/>
       </MetaTags>
       Homepage
-      <header></header>
-      <nav></nav>
-      <main></main>
-      <footer/>
+      <Header/>
+      <Nav/>
+      <Main/>
+      <Footer/>
     </>
   );
 }
