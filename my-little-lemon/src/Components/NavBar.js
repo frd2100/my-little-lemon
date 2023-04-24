@@ -17,7 +17,7 @@ import {
   useColorModeValue,
   Stack, Image, Text,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { AddIcon,HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Links = ['Home', 'Menu', 'Reserve a Table', 'Contact Us'];
 
@@ -40,7 +40,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('#F5F5F5', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -54,7 +54,7 @@ export default function Simple() {
                 <Image src={littleLemonLogo} boxSize='40px' alignItems='flex'></Image>
             </Box>
             <Box>
-                <Text> Little Lemon </Text>
+                <Text color='gray.900'> Little Lemon </Text>
             </Box>
             <HStack
               as={'nav'}
@@ -65,7 +65,7 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+          <Flex alignItems={'right '}>
             <Menu>
               <MenuButton
                 as={Button}
@@ -82,6 +82,11 @@ export default function Simple() {
               </MenuList>
             </Menu>
           </Flex>
+          <IconButton
+            backgroundColor='#495E57'
+             aria-label='Search database'
+             icon={<AddIcon />}
+           />
         </Flex>
 
         {isOpen ? (
@@ -94,8 +99,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }

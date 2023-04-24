@@ -1,0 +1,57 @@
+/* Main*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px 32px;
+  gap: 16px;
+}
+
+h3 {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.mainClassButton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  width: 412px;
+  height: 39px;
+  overflow-x: scroll;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.mainButton {
+  padding: 10px;
+  gap: 100%;
+  margin-right: 50px;
+
+  background: #edefee;
+  border-radius: 16px;
+
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  text-transform: capitalize;
+
+  color: #495e57;
+}
