@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./Card.js"
+import Card from "./Card.Js"
 import "./Main.css";
 
 class Main extends React.Component {
@@ -16,7 +16,7 @@ class Main extends React.Component {
           <button className="mainButton">Specials</button>
         </div>
         <div>
-
+          <Card />
         </div>
       </main>
     );

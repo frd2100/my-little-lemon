@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../Card.css';
+import './Card.css';
 
 /*
 1. Card Class
