@@ -5,7 +5,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 0px 32px;
+  padding: 40px 20px 32px;
   gap: 16px;
 }
 
@@ -16,6 +16,8 @@ h3 {
   font-size: 20px;
   line-height: 23px;
   text-transform: uppercase;
+  text-align: left;
+  margin-left: 40px;
 
   color: #000000;
 }
@@ -23,7 +25,7 @@ h3 {
 .mainClassButton {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   padding: 0px;
   gap: 12px;
 
@@ -32,15 +34,17 @@ h3 {
   overflow-x: scroll;
 
   /* Inside auto layout */
-  flex: none;
   order: 1;
   flex-grow: 0;
 }
 
 .mainButton {
+  text-align: center;
+  align-items: center;
   padding: 10px;
   gap: 100%;
-  margin-right: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
 
   background: #edefee;
   border-radius: 16px;
