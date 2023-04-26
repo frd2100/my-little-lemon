@@ -1,0 +1,56 @@
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #f7f7f7;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+button {
+  grid-column: 1 / -1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #8dc63f;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  background: #f4ce14;
+  border-radius: 16px;
+
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+button:hover {
+  background-color: #78ab33;
+}

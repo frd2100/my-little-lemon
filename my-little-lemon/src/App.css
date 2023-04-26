@@ -74,13 +74,11 @@ p {
   background: #f4ce14;
   border-radius: 16px;
 
-  /* Nav_Link */
   font-family: "Karla";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  /* identical to box height */
 
   color: #000000;
 }
