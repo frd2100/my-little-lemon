@@ -6,6 +6,7 @@ import Header from  './Components/Header.js';
 import NavBar from './Components/NavBar.js';
 import Main from './Components/Main'
 import Footer from './Components/Footer';
+import AboutUs from './Components/AboutUs.js'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <NavBar/>
       <Header/>
       <Main/>
+      <AboutUs/>
       <Footer/>
     </ChakraProvider>
   );

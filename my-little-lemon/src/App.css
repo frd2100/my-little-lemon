@@ -85,4 +85,37 @@ p {
   color: #000000;
 }
 
+/*about us */
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 
+.about-us h2 {
+  font-size: 2rem;
+  color: #495e57;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  color: #495e57;
+}
+
+@media screen and (max-width: 600px) {
+  /* adjust the styles for smaller screens */
+  .about-us {
+    padding: 0 1rem;
+  }
+
+  .about-us h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-us p {
+    font-size: 1rem;
+  }
+}
