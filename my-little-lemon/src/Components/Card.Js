@@ -41,8 +41,8 @@ function CardImage(props) {
             <CardImage image={this.props.image} width={this.props.width} />
             <CardContent
               title={this.props.title}
-              location={this.props.description}
-              description={this.props.price}
+              description={this.props.description}
+              price={this.props.price}
             />
           </div>
         </div>
@@ -50,10 +50,10 @@ function CardImage(props) {
     }
   }
 
-  /* // 2. Defaults /////////////////////////////////////////////
+  // 2. Defaults /////////////////////////////////////////////
   Card.defaultProps = {
     width: 350,
     title: "Template - Card Title",
-    location: "Location label",
-    description: "Template description textbox"
-  }; */
+    description: "Template description textbox",
+    price:"0.50$"
+  };
