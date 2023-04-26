@@ -1,6 +1,6 @@
 /* Main*/
 
-main {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,4 +58,9 @@ h3 {
   text-transform: capitalize;
 
   color: #495e57;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
 }

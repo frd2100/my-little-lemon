@@ -4,7 +4,7 @@
   border-radius: 8px;
   box-shadow: 0px 0px 8px #ccc;
   color: #495e57;
-  margin: 12px 0px;
+  margin: 12px 12px;
 }
 
 .styleCardContent {
@@ -23,15 +23,18 @@
   font-size: 20;
   font-weight: 600;
   margin: 12px 0px 0px 0px;
+  color: #495e57;
+
 }
 
-.styleLocationLabel {
-  color: #8294aa;
+.stylePrice {
+  color: #495e57;
   font-size: 14;
   margin: 4px 0;
 }
 
 .styleDescription {
+  color: #495e57;
   font-size: 14;
   margin: 8px 0 0 0;
 }

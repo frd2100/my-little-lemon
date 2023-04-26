@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./Card.Js";
+import Card from "./Card.js";
 import "./Main.css";
 import bruschetta from "../Images/bruschetta.jpg"
 import swordFish from "../Images/swordFish.jpg"
@@ -29,7 +29,7 @@ const cards = [
 class Main extends React.Component {
   render() {
     return (
-      <main id="menu">
+      <main id="menu" className='main'>
         <div>
           <h3>Order for delivery!</h3>
         </div>
@@ -39,7 +39,7 @@ class Main extends React.Component {
           <button className="mainButton">Dessert</button>
           <button className="mainButton">Specials</button>
         </div>
-        <div>
+        <div className="cardContainer">
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -48,7 +48,7 @@ class Main extends React.Component {
               description={card.description}
               price={card.price}
             />
-          ))}{" "}
+          ))}
         </div>
       </main>
     );

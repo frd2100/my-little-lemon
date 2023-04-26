@@ -27,8 +27,8 @@ function CardImage(props) {
     return (
       <div className="styleCardContent">
         <p className="styleCardTitle">{props.title}</p>
-        <p className="styleLocationLabel">{props.description}</p>
-        <p className="styleDescription">{props.price}</p>
+        <p className="styleDescription">{props.description}</p>
+        <p className="stylePrice">{props.price}</p>
       </div>
     );
   }
