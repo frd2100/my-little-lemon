@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import littleLemonLogo from "../Images/littleLemonLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -23,9 +22,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const Links = ["Home", "Menu", "Reserve a Table", "Contact Us"];
-
-/* const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
+/* const Links = ["Home", "Menu", "Reserve a Table", "Contact Us"];
+ const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
   <Link
     px={2}
     py={1}

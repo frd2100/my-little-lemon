@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import './Card.css';
 
 /*
@@ -16,6 +16,7 @@ function CardImage(props) {
           <img
             style={{ width: props.width + "px", marginTop: "-8%" }}
             src={props.image}
+            alt=""
           />
         </div>
       );
