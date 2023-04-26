@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import Card from "./Card.Js"
 import "./Main.css";
+
+
 
 class Main extends React.Component {
   render() {
     return (
-      <main>
+      <main id="menu">
         <div>
           <h3>Order for delivery!</h3>
         </div>
@@ -16,8 +18,8 @@ class Main extends React.Component {
           <button className="mainButton">Specials</button>
         </div>
         <div>
-          <Card />
-        </div>
+{/*           <Card />
+ */}        </div>
       </main>
     );
   }

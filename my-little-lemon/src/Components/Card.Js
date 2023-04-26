@@ -50,10 +50,10 @@ function CardImage(props) {
     }
   }
 
-  // 2. Defaults /////////////////////////////////////////////
+  /* // 2. Defaults /////////////////////////////////////////////
   Card.defaultProps = {
     width: 350,
     title: "Template - Card Title",
     location: "Location label",
     description: "Template description textbox"
-  };
+  }; */
