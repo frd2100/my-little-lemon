@@ -1,21 +1,29 @@
-import './App.css';
-import React from 'react';
-import { ChakraProvider } from '@chakra-ui/react'
+import "./App.css";
+import React, { useState } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 
-import Header from  './Components/Header.js';
-import NavBar from './Components/NavBar.js';
-import Main from './Components/Main'
-import Footer from './Components/Footer';
-import AboutUs from './Components/AboutUs.js'
+import Header from "./Components/Header.js";
+import NavBar from "./Components/NavBar.js";
+import Main from "./Components/Main";
+import Footer from "./Components/Footer";
+import AboutUs from "./Components/AboutUs.js";
+import BookingPage from "./Components/BookingPage.js";
 
 function App() {
+  const [showBookingPage, setShowBookingPage] = useState(false);
+
+  const toggleBookingPage = () => {
+    setShowBookingPage(!showBookingPage);
+  };
+
   return (
     <ChakraProvider>
-      <NavBar/>
-      <Header/>
-      <Main/>
-      <AboutUs/>
-      <Footer/>
+      {showBookingPage && <BookingPage />}
+      <NavBar toggleBookingPage={toggleBookingPage} />
+      <Header />
+      <Main />
+      <AboutUs />
+      <Footer />
     </ChakraProvider>
   );
 }

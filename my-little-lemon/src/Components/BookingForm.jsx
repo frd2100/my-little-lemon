@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./BookingForm.css";
 
 const BookingForm = () => {
@@ -24,8 +24,19 @@ const BookingForm = () => {
     setOccasion(event.target.value);
   };
 
+  const isDisabled = () => {
+    if (!date && !time &&  !numGuests){
+      return true;
+    }
+    return false;
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
+    setDate("");
+    setTime("");
+    setNumGuests("");
+    setOccasion("");
+
     console.log("Reservation submitted:", { date, time, numGuests, occasion });
   };
 
@@ -74,7 +85,7 @@ const BookingForm = () => {
             <option>Anniversary</option>
           </select>
         </div>
-        <button type="submit" onClick={handleSubmit}>Submit reservation</button>
+        <button type="submit" disable={isDisabled} onClick={handleSubmit}>Submit reservation</button>
       </form>
     </div>
   );

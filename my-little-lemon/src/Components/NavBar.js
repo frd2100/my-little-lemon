@@ -1,4 +1,5 @@
 import littleLemonLogo from "../Images/littleLemonLogo.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,23 +23,9 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-/* const Links = ["Home", "Menu", "Reserve a Table", "Contact Us"];
- const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={href}>
-    {children}
-  </Link>
-);
- */
-export default function NavBar() {
+export default function NavBar({toggleBookingPage}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
 
   return (
     <>
@@ -65,10 +52,11 @@ export default function NavBar() {
             <HStack
               as={"nav"}
               spacing={4}
-              display={{ base: "none", md: "flex" }}>
+              display={{ base: "none", md: "flex" }}
+            >
               <Link href="#home">Home</Link>
               <Link href="#menu">Menu</Link>
-              <Link href="#reserve-a-table">Reserve a Table</Link>
+              <Link onClick={toggleBookingPage}>Reserve a Table</Link>
               <Link href="#about-us">About Us</Link>
             </HStack>
           </HStack>
@@ -101,7 +89,7 @@ export default function NavBar() {
             <Stack as={"nav"} spacing={4}>
               <Link href="#home">Home</Link>
               <Link href="#menu">Menu</Link>
-              <Link href="#reserve-a-table">Reserve a Table</Link>
+              <Link onClick={toggleBookingPage}>Reserve a Table</Link>
               <Link href="#about-us">About Us</Link>
             </Stack>
           </Box>
