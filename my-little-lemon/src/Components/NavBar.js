@@ -23,9 +23,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-export default function NavBar({toggleBookingPage}) {
+export default function NavBar({ toggleBookingPage }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
 
   return (
     <>
@@ -33,7 +32,13 @@ export default function NavBar({toggleBookingPage}) {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            icon={
+              isOpen ? (
+                <CloseIcon color="#495e57" />
+              ) : (
+                <HamburgerIcon color="#495e57" />
+              )
+            }
             aria-label={"Open Menu"}
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}

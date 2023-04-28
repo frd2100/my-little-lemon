@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./BookingForm.css";
 
-const BookingForm = () => {
+const BookingForm = ({exit}) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [numGuests, setNumGuests] = useState("");
@@ -25,7 +25,7 @@ const BookingForm = () => {
   };
 
   const isDisabled = () => {
-    if (!date && !time &&  !numGuests){
+    if (!date && !time && !numGuests){
       return true;
     }
     return false;
@@ -38,6 +38,7 @@ const BookingForm = () => {
     setOccasion("");
 
     console.log("Reservation submitted:", { date, time, numGuests, occasion });
+    exit=true;
   };
 
   return (
@@ -49,7 +50,7 @@ const BookingForm = () => {
             type="date"
             id="date"
             name="date"
-            onChange={handleDateChange} 
+            onChange={handleDateChange}
             value ={date}
             required
           />
@@ -85,7 +86,7 @@ const BookingForm = () => {
             <option>Anniversary</option>
           </select>
         </div>
-        <button type="submit" disable={isDisabled} onClick={handleSubmit}>Submit reservation</button>
+        <button className="buttonHeader" type="submit" disable={isDisabled().toString()} onClick={handleSubmit}>Submit reservation</button>
       </form>
     </div>
   );

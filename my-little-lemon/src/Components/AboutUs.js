@@ -3,8 +3,8 @@ import React from 'react';
 function AboutUs() {
     return(
         <div className="about-us">
-        <h2 alignItems='center'>About Us</h2>
-        <p alignItems='center' color = '#495e57'>Welcome to Little Lemon, a family-owned Italian restaurant located in the heart of Chicago. 
+        <h2 align-items='center'>About Us</h2>
+        <p align-items='center' color = '#495e57'>Welcome to Little Lemon, a family-owned Italian restaurant located in the heart of Chicago. 
             Our restaurant has been serving delicious Italian cuisine to our local community for over 20 years. 
             Our goal is to provide our guests with a warm and inviting atmosphere, where they can enjoy a delicious meal with family and friends.
         </p>

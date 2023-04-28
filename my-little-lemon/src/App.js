@@ -12,15 +12,15 @@ import BookingPage from "./Components/BookingPage.js";
 function App() {
   const [showBookingPage, setShowBookingPage] = useState(false);
 
-  const toggleBookingPage = () => {
+  const toggleBP = () => {
     setShowBookingPage(!showBookingPage);
   };
 
   return (
     <ChakraProvider>
-      {showBookingPage && <BookingPage />}
-      <NavBar toggleBookingPage={toggleBookingPage} />
-      <Header />
+      {showBookingPage && <BookingPage toggleBookingPage={toggleBP} />}
+      <NavBar toggleBookingPage={toggleBP} />
+      <Header toggleBookingPage={toggleBP} />
       <Main />
       <AboutUs />
       <Footer />
