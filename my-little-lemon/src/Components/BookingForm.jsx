@@ -1,20 +1,36 @@
-import React, {useState} from "react";
+import React, { useState, useReducer } from "react";
 import "./BookingForm.css";
 
-const BookingForm = ({exit}) => {
+function bookingFormReducer(state, action) {
+  switch (action.type) {
+    case "SET_DATE":
+      return { ...state, date: action.payload };
+    case "SET_TIME":
+      return { ...state, time: action.payload };
+    default:
+      return state;
+  }
+}
+
+const BookingForm = ({ exit, availableTimes }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [numGuests, setNumGuests] = useState("");
   const [occasion, setOccasion] = useState("");
-  const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
-  };
+  const [bookingFormState, dispatch] = useReducer(bookingFormReducer, {
+    date: "",
+    time: "",
+  });
 
-  const handleTimeChange = (event) => {
-    setTime(event.target.value);
-  };
+
+  function handleDateChange(event) {
+    dispatch({ type: "SET_DATE", payload: event.target.value });
+  }
+
+  function handleTimeChange(event) {
+    dispatch({ type: "SET_TIME", payload: event.target.value });
+  }
 
   const handleNumGuestsChange = (event) => {
     setNumGuests(event.target.value);
@@ -25,20 +41,19 @@ const BookingForm = ({exit}) => {
   };
 
   const isDisabled = () => {
-    if (!date && !time && !numGuests){
+    if (!date && !time && !numGuests) {
       return true;
     }
     return false;
-  }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Reservation submitted:", { date, time, numGuests, occasion });
+
     setDate("");
     setTime("");
     setNumGuests("");
     setOccasion("");
-
-    console.log("Reservation submitted:", { date, time, numGuests, occasion });
-    exit=true;
   };
 
   return (
@@ -51,13 +66,18 @@ const BookingForm = ({exit}) => {
             id="date"
             name="date"
             onChange={handleDateChange}
-            value ={date}
+            value={date}
             required
           />
         </div>
         <div className="form-group">
           <label htmlFor="time">Time:</label>
-          <select id="time" value={time} name="time" onChange={handleTimeChange}>
+          <select
+            id="time"
+            value={time}
+            name="time"
+            onChange={handleTimeChange}
+          >
             {availableTimes.map((time) => (
               <option key={time} value={time}>
                 {time}
@@ -81,12 +101,23 @@ const BookingForm = ({exit}) => {
         </div>
         <div className="form-group">
           <label htmlFor="occasion">Occasion:</label>
-          <select id="occasion" value={occasion} onChange={handleOccasionChange}  >
+          <select
+            id="occasion"
+            value={occasion}
+            onChange={handleOccasionChange}
+          >
             <option>Birthday</option>
             <option>Anniversary</option>
           </select>
         </div>
-        <button className="buttonHeader" type="submit" disable={isDisabled().toString()} onClick={handleSubmit}>Submit reservation</button>
+        <button
+          className="buttonHeader"
+          type="submit"
+          disable={isDisabled().toString()}
+          onClick={handleSubmit}
+        >
+          Book Now
+        </button>
       </form>
     </div>
   );
