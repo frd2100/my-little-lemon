@@ -2,14 +2,14 @@ import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
 import Modal from "react-modal";
 import "./BookingForm.css";
-
+import fetchAPI from "./FetchApi.js"
 Modal.setAppElement("#root");
 
 const BookingPage = ({ toggleBookingPage }) => {
 
   const initializeTimes = () => {
     const today = new Date().toISOString().slice(0, 10);
-    return fetchApi(today)
+    return fetchAPI(today)
       .then(response => response.json())
       .then(data => data.availableTimes)
       .catch(error => console.error(error));
@@ -33,7 +33,7 @@ const BookingPage = ({ toggleBookingPage }) => {
   const [data, setData] = useState([]);
 
   useEffect((date) => {
-    fetchApi(date)
+    fetchAPI(date)
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error(error));
