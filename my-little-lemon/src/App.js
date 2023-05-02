@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <ChakraProvider>
+    <ChakraProvider id="root">
       {showBookingPage && <BookingPage toggleBookingPage={toggleBP} />}
       <NavBar toggleBookingPage={toggleBP} />
       <Header toggleBookingPage={toggleBP} />

@@ -1,15 +1,20 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
 import Modal from "react-modal";
 import "./BookingForm.css";
 
 Modal.setAppElement("#root");
 
-const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-};
-
 const BookingPage = ({ toggleBookingPage }) => {
+
+  const initializeTimes = () => {
+    const today = new Date().toISOString().slice(0, 10);
+    return fetchApi(today)
+      .then(response => response.json())
+      .then(data => data.availableTimes)
+      .catch(error => console.error(error));
+  };
+
   const [availableTimes, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "UPDATE":
@@ -24,6 +29,15 @@ const BookingPage = ({ toggleBookingPage }) => {
         return state;
     }
   }, initializeTimes());
+
+  const [data, setData] = useState([]);
+
+  useEffect((date) => {
+    fetchApi(date)
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <Modal
@@ -67,3 +81,4 @@ const BookingPage = ({ toggleBookingPage }) => {
 };
 
 export default BookingPage;
+
